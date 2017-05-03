@@ -28,7 +28,6 @@ namespace BorderLessBrowser
 
             var browser = new BrowserForm();
             Application.Run(browser);
-
             Cef.Shutdown();
         }
     }

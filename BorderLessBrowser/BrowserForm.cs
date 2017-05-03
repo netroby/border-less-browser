@@ -7,7 +7,10 @@ using System.Windows.Forms;
 using BorderLessBrowser.Controls;
 using CefSharp.WinForms;
 using BorderLessBrowser.Handlers;
+using AutoUpdaterDotNET;
+
 namespace BorderLessBrowser
+   
 {
     public partial class BrowserForm : Form
     {
@@ -17,16 +20,18 @@ namespace BorderLessBrowser
         {
             InitializeComponent();
 
-            Text = "BorderLessBrowser";
-            WindowState = FormWindowState.Maximized;
+            Text = "BorderLessBrowser " + ProductVersion;
 
             browser = new ChromiumWebBrowser("https://www.bing.com")
             {
                 Dock = DockStyle.Fill,
             };
             browser.LifeSpanHandler = new LifeSpanHandler();
+            browser.Width = 720;
+            browser.Height = 480;
             toolStripContainer.ContentPanel.Controls.Add(browser);
             
+            AutoUpdater.Start("https://catsh.us/version.xml");
         }
         
         private void LoadUrl(string url)
