@@ -7,13 +7,21 @@ using System;
 using System.IO;
 using System.Windows.Forms;
 
+
 namespace BorderLessBrowser
 {
     public class Program
     {
+        private static Form browser;
+        
+
         [STAThread]
         public static void Main()
         {
+            var updater = FSLib.App.SimpleUpdater.Updater.Instance;
+            updater.NoUpdatesFound += new EventHandler(updater_noUpdatesFound);
+            FSLib.App.SimpleUpdater.Updater.CheckUpdateSimple("http://www.netroby.cn/download/{0}", "update.xml");
+
             //For Windows 7 and above, best to include relevant app.manifest entries as well
             Cef.EnableHighDPISupport();
 
@@ -25,10 +33,17 @@ namespace BorderLessBrowser
 
             //Perform dependency check to make sure all relevant resources are in our output directory.
             Cef.Initialize(settings, performDependencyCheck: true, browserProcessHandler: null);
-
-            var browser = new BrowserForm();
+            browser = new BrowserForm();
             Application.Run(browser);
             Cef.Shutdown();
+
+        }
+        /**
+         * 如果没有更新,就把浏览器设置为置顶窗口
+         */
+        public static void  updater_noUpdatesFound(object sender, EventArgs e)
+        {
+            browser.TopMost = true;
         }
     }
 }

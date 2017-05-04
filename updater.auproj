@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<AuProject xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <UpdateInfo>
+    <AppName>BorderLessBrowser</AppName>
+    <AppVersion>1.5.0.0</AppVersion>
+    <FileExecuteBefore />
+    <FileExecuteAfter>BorderLessBrowser.exe</FileExecuteAfter>
+    <ExecuteTimeout>0</ExecuteTimeout>
+    <TreatErrorAsNotUpdated>false</TreatErrorAsNotUpdated>
+    <PromptUserBeforeAutomaticUpgrade>true</PromptUserBeforeAutomaticUpgrade>
+    <AutoCloseSucceedWindow>true</AutoCloseSucceedWindow>
+    <Desc>1.5.0.0
+默认窗口不置顶,没有检测到更新,就把窗口置顶
+1.4.0.0 
+采用新的自动更新模式</Desc>
+    <DeleteMethod>None</DeleteMethod>
+    <PackageSize>0</PackageSize>
+    <ForceUpdate>false</ForceUpdate>
+    <Packages />
+    <HideBeforeExecuteWindow>false</HideBeforeExecuteWindow>
+    <HideAfterExecuteWindow>false</HideAfterExecuteWindow>
+    <MustUpdate>false</MustUpdate>
+    <AutoExitCurrentProcess>false</AutoExitCurrentProcess>
+    <AutoEndProcessesWithinAppDir>true</AutoEndProcessesWithinAppDir>
+    <AutoKillProcesses>false</AutoKillProcesses>
+    <RequreAdminstrorPrivilege>false</RequreAdminstrorPrivilege>
+  </UpdateInfo>
+  <DefaultFileVerificationLevel>Size Hash</DefaultFileVerificationLevel>
+  <DefaultUpdateMethod>VersionCompare</DefaultUpdateMethod>
+  <Files />
+  <ApplicationDirectory>BorderLessBrowser\bin\x64\Release</ApplicationDirectory>
+  <DestinationDirectory>C:\Users\huzhifeng\Documents\bbl-publish</DestinationDirectory>
+  <CreateCompatiblePackage>false</CreateCompatiblePackage>
+  <CompressPackage>false</CompressPackage>
+  <EnableIncreaseUpdate>false</EnableIncreaseUpdate>
+  <VersionUpdateSrc>BorderLessBrowser\bin\x64\Release\BorderLessBrowser.exe</VersionUpdateSrc>
+  <PackageExtension>zip</PackageExtension>
+  <UseRandomPackageNaming>true</UseRandomPackageNaming>
+  <CleanBeforeBuild>true</CleanBeforeBuild>
+  <ComponentFlags />
+</AuProject>

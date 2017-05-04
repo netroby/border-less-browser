@@ -7,10 +7,9 @@ using System.Windows.Forms;
 using BorderLessBrowser.Controls;
 using CefSharp.WinForms;
 using BorderLessBrowser.Handlers;
-using AutoUpdaterDotNET;
 
 namespace BorderLessBrowser
-   
+
 {
     public partial class BrowserForm : Form
     {
@@ -30,17 +29,8 @@ namespace BorderLessBrowser
             browser.Width = 720;
             browser.Height = 480;
             toolStripContainer.ContentPanel.Controls.Add(browser);
-            
-            AutoUpdater.Start("https://catsh.us/version.xml");
         }
-        
-        private void LoadUrl(string url)
-        {
-            if (Uri.IsWellFormedUriString(url, UriKind.RelativeOrAbsolute))
-            {
-                browser.Load(url);
-            }
-        }
+
         
     }
 }
