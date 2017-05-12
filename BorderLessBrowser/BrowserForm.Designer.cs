@@ -1,4 +1,6 @@
-﻿namespace BorderLessBrowser
+﻿using System.Windows.Forms;
+
+namespace BorderLessBrowser
 {
     partial class BrowserForm
     {

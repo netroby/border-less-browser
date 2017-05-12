@@ -1,8 +1,12 @@
 {
   "ExpandedNodes": [
     "",
-    "\\BorderLessBrowser"
+    "\\BorderLessBrowser",
+    "\\BorderLessBrowser\\Controls",
+    "\\BorderLessBrowser\\Handlers",
+    "\\BorderLessBrowser\\Properties",
+    "\\BorderLessBrowser\\Resources"
   ],
-  "SelectedNode": "\\BorderLessBrowser.sln",
+  "SelectedNode": "\\BorderLessBrowser\\Properties\\AssemblyInfo.cs",
   "PreviewInSolutionExplorer": false
 }
