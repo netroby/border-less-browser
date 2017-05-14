@@ -19,20 +19,20 @@ namespace BorderLessBrowser
         public static void Main()
         {
             var updater = FSLib.App.SimpleUpdater.Updater.Instance;
-            updater.NoUpdatesFound += new EventHandler(updater_noUpdatesFound);
+            updater.NoUpdatesFound += new EventHandler(Program.updater_noUpdatesFound);
             FSLib.App.SimpleUpdater.Updater.CheckUpdateSimple("http://www.netroby.cn/download/{0}", "update.xml");
-
+            
             //For Windows 7 and above, best to include relevant app.manifest entries as well
             Cef.EnableHighDPISupport();
 
             var settings = new CefSettings()
             {
                 //By default CefSharp will use an in-memory cache, you need to specify a Cache Folder to persist data
-                CachePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "CefSharp\\Cache")
+                CachePath = Directory.GetCurrentDirectory() + @"\Cache",
             };
 
             //Perform dependency check to make sure all relevant resources are in our output directory.
-            Cef.Initialize(settings, performDependencyCheck: false, browserProcessHandler: null);
+            Cef.Initialize(settings);
             
             browser = new BrowserForm();
             Application.Run(browser);
@@ -46,6 +46,7 @@ namespace BorderLessBrowser
         {
             // 当一个控件的InvokeRequired属性值为真时，说明有一个创建它以外的线程想访问它
             Action actionDelegate = () => { browser.TopMost = true; };
+            
             browser.Invoke(actionDelegate);
         }
     }

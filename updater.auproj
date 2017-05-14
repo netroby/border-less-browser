@@ -2,14 +2,16 @@
 <AuProject xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <UpdateInfo>
     <AppName>BorderLessBrowser</AppName>
-    <AppVersion>1.5.1.0</AppVersion>
+    <AppVersion>1.5.2.0</AppVersion>
     <FileExecuteBefore />
     <FileExecuteAfter>BorderLessBrowser.exe</FileExecuteAfter>
     <ExecuteTimeout>0</ExecuteTimeout>
     <TreatErrorAsNotUpdated>false</TreatErrorAsNotUpdated>
     <PromptUserBeforeAutomaticUpgrade>true</PromptUserBeforeAutomaticUpgrade>
     <AutoCloseSucceedWindow>true</AutoCloseSucceedWindow>
-    <Desc>1.5.1.0
+    <Desc>1.5.2.0
+修订bug
+1.5.1.0
 修正bug
 1.5.0.0
 默认窗口不置顶,没有检测到更新,就把窗口置顶
