@@ -32,7 +32,8 @@ namespace BorderLessBrowser
             };
 
             //Perform dependency check to make sure all relevant resources are in our output directory.
-            Cef.Initialize(settings, performDependencyCheck: true, browserProcessHandler: null);
+            Cef.Initialize(settings, performDependencyCheck: false, browserProcessHandler: null);
+            
             browser = new BrowserForm();
             Application.Run(browser);
             Cef.Shutdown();
@@ -43,7 +44,9 @@ namespace BorderLessBrowser
          */
         public static void  updater_noUpdatesFound(object sender, EventArgs e)
         {
-            browser.TopMost = true;
+            // 当一个控件的InvokeRequired属性值为真时，说明有一个创建它以外的线程想访问它
+            Action actionDelegate = () => { browser.TopMost = true; };
+            browser.Invoke(actionDelegate);
         }
     }
 }
