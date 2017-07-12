@@ -21,13 +21,15 @@ namespace BorderLessBrowser
 
             Text = "BorderLessBrowser " + ProductVersion;
 
-            browser = new ChromiumWebBrowser("https://www.bing.com")
+            browser = new ChromiumWebBrowser("")
             {
                 Dock = DockStyle.Fill,
             };
             browser.LifeSpanHandler = new LifeSpanHandler();
             browser.Width = 720;
             browser.Height = 480;
+            string DefaultHtml = "<html><head><title>Home</title><body><div style=\"margin: 100px auto; width: 500px\"><form action = \"https://www.sogou.com/web\" ><input type=\"text\" name=\"query\" style=\"width:320px;height:40px;font-size:24px;float:left\"><button type=\"submit\"  style=\"width:120px;height:40px;float:left;margin:0px 10px\">Go</button></form></div>";
+            CefSharp.WebBrowserExtensions.LoadHtml(browser, DefaultHtml, false);
             toolStripContainer.ContentPanel.Controls.Add(browser);
         }
 
